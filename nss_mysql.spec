@@ -1,13 +1,14 @@
-# $Revision: 1.2 $Date: 2002-05-21 23:14:15 $
+# $Revision: 1.3 $Date: 2002-05-23 16:45:48 $
 Summary:	MySQL Name Service Switch Module
 Summary(pl):	Modu³ NSS MySQL
 Name:		nss_mysql
-Version:	0.35
+Version:	0.37
 Release:	1
 License:	GPL
 Group:		Base
-Source0:	http://freesoftware.fsf.org/download/nss-mysql/nss-mysql-%{version}.tar.gz
+Source0:	http://freesoftware.fsf.org/download/nss-mysql/nss-mysql.pkg/%{version}/nss-mysql-%{version}.tar.gz
 Patch0:		%{name}-m4.patch
+Patch1:		%{name}-header.patch
 URL:		http://www.freesoftware.fsf.org/nss-mysql/
 BuildRequires:	autoconf
 BuildRequires:	automake
@@ -29,6 +30,7 @@ MySQL.
 %prep
 %setup -q -n nss-mysql-%{version}
 %patch0 -p1
+%patch1 -p1
 
 %build
 rm -f missing

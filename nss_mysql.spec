@@ -5,8 +5,8 @@ Version:	0.43
 Release:	1
 License:	GPL
 Group:		Base
-Source0:	http://freesoftware.fsf.org/download/nss-mysql/nss-mysql.pkg/%{version}/nss-mysql-%{version}.tar.gz
-# Source0-md5:	859abea3e9652ce6e3b18d8b0ea783dc
+Source0:	http://savannah.nongnu.org/download/nss-mysql/nss-mysql.pkg/%{version}/nss-mysql-%{version}.tar.gz
+# Source0-md5:	1b3e62509dec0904142a06c58e9b9473
 Patch0:		%{name}-m4.patch
 URL:		http://www.freesoftware.fsf.org/nss-mysql/
 BuildRequires:	autoconf

@@ -2,7 +2,7 @@ Summary:	MySQL Name Service Switch Module
 Summary(pl):	Modu³ NSS MySQL
 Name:		nss_mysql
 Version:	0.43
-Release:	1
+Release:	3
 License:	GPL
 Group:		Base
 Source0:	http://savannah.nongnu.org/download/nss-mysql/nss-mysql.pkg/%{version}/nss-mysql-%{version}.tar.gz
@@ -53,8 +53,8 @@ install -d $RPM_BUILD_ROOT{%{_sysconfdir},%{_libdir}}
 %clean
 rm -rf $RPM_BUILD_ROOT
 
-%post   -p /sbin/ldconfig
-%postun -p /sbin/ldconfig
+%post	-p /sbin/ldconfig
+%postun	-p /sbin/ldconfig
 
 %files
 %defattr(644,root,root,755)

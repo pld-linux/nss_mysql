@@ -40,7 +40,7 @@ MySQL.
 	%{?debug:--enable-debug} \
 	--enable-group \
 	--enable-shadow \
-	--with-mysql-lib=%{_libdir} \
+	--with-mysql-lib=/usr/%{_lib} \
 	--with-mysql-include=/usr/include/mysql
 
 %install

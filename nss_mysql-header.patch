@@ -1,0 +1,61 @@
+diff -urN nss-mysql-0.37.org/Makefile.am nss-mysql-0.37/Makefile.am
+--- nss-mysql-0.37.org/Makefile.am	Thu May 23 18:43:36 2002
++++ nss-mysql-0.37/Makefile.am	Thu May 23 18:43:58 2002
+@@ -32,7 +32,7 @@
+ 
+ libnss_mysql_la_SOURCES = parser.c lib.c shadow.c passwd.c group.c ent.c
+ 
+-noinst_HEADERS = ent.h group.h lib.h parser.h passwd.h nss-shadow.h 
++noinst_HEADERS = ent.h group.h lib.h parser.h passwd.h nss-shadow.h nss-mysql.h
+ 
+ libnss_mysql_la_LDFLAGS = -module -version-info 2:0:0
+ 
+diff -urN nss-mysql-0.37.org/nss-mysql.h nss-mysql-0.37/nss-mysql.h
+--- nss-mysql-0.37.org/nss-mysql.h	Thu Jan  1 01:00:00 1970
++++ nss-mysql-0.37/nss-mysql.h	Thu May 23 18:43:13 2002
+@@ -0,0 +1,45 @@
++#ifndef _HAVE_NSS_MYSQL_H
++#define _HAVE_NSS_MYSQL_H
++
++struct connection_options {
++        char * host;
++        char * database;
++        char * dbuser;
++        char * dbpasswd;
++        char * backup_host;
++        char * backup_database;
++        char * backup_dbuser;
++        char * backup_dbpasswd;
++};
++
++
++#ifdef HAVE_NSSWITCH_H
++#include <nss_common.h>
++ 
++typedef nss_status_t NSS_STATUS;
++ 
++#define NSS_STATUS_SUCCESS      NSS_SUCCESS
++#define NSS_STATUS_NOTFOUND     NSS_NOTFOUND
++#define NSS_STATUS_UNAVAIL      NSS_UNAVAIL
++#define NSS_STATUS_TRYAGAIN     NSS_TRYAGAIN
++
++#else
++#include <nss.h>
++
++typedef enum nss_status NSS_STATUS;
++
++#endif
++
++#ifdef PTHREAD_MUTEX_INITIALIZER_NEEDS_BRACKETS
++        #define NSS_MYSQL_PTHREAD_MUTEX_INITIALIZER {{PTHREAD_MUTEX_INITIALIZER}}
++#else
++        #define NSS_MYSQL_PTHREAD_MUTEX_INITIALIZER PTHREAD_MUTEX_INITIALIZER
++#endif
++
++#ifdef ENT_T
++        typedef ENT_T ent_t;
++#else
++        #error ENT_T not defined please report that bug
++#endif
++
++#endif /* _HAVE_NSS_MYSQL_H */

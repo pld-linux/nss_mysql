@@ -1,4 +1,4 @@
-# $Revision: 1.3 $Date: 2002-05-23 16:45:48 $
+# $Revision: 1.4 $Date: 2002-05-23 17:43:50 $
 Summary:	MySQL Name Service Switch Module
 Summary(pl):	Modu³ NSS MySQL
 Name:		nss_mysql
@@ -36,7 +36,7 @@ MySQL.
 rm -f missing
 aclocal
 %{__autoconf}
-automake -a -c
+%{__automake}
 %configure \
 	%{?debug:--enable-debug} \
 	--enable-group \
@@ -50,9 +50,6 @@ install -d $RPM_BUILD_ROOT{%{_sysconfdir},%{_libdir}}
 %{__make} install \
 	DESTDIR=$RPM_BUILD_ROOT
 
-gzip -9nf AUTHORS ChangeLog NEWS README SHADOW THANKS TODO UPGRADE \
-	*.sql
-
 %clean
 rm -rf $RPM_BUILD_ROOT
 
@@ -61,6 +58,6 @@ rm -rf $RPM_BUILD_ROOT
 
 %files
 %defattr(644,root,root,755)
-%doc *.gz
+%doc AUTHORS ChangeLog NEWS README SHADOW THANKS TODO UPGRADE *.sql
 %attr(755,root,root) %{_libdir}/*.so*
 %attr(600,root,root) %config(noreplace) %verify(not md5 size mtime) %{_sysconfdir}/nss*.conf

@@ -1,4 +1,4 @@
-# $Revision: 1.9 $Date: 2003-05-25 05:51:13 $
+# $Revision: 1.10 $Date: 2003-05-28 12:59:55 $
 Summary:	MySQL Name Service Switch Module
 Summary(pl):	Modu³ NSS MySQL
 Name:		nss_mysql
@@ -7,6 +7,7 @@ Release:	1
 License:	GPL
 Group:		Base
 Source0:	http://freesoftware.fsf.org/download/nss-mysql/nss-mysql.pkg/%{version}/nss-mysql-%{version}.tar.gz
+# Source0-md5:	859abea3e9652ce6e3b18d8b0ea783dc
 Patch0:		%{name}-m4.patch
 URL:		http://www.freesoftware.fsf.org/nss-mysql/
 BuildRequires:	autoconf

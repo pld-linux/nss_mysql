@@ -28,7 +28,7 @@ informacji typowych dla plików groups, passwd oraz shadow w bazie
 MySQL.
 
 %prep
-%setup -q -n nss-mysql-%{version}
+%setup -q
 %patch0 -p1
 
 %build

@@ -1,4 +1,4 @@
-# $Revision: 1.8 $Date: 2002-11-21 18:45:46 $
+# $Revision: 1.9 $Date: 2003-05-25 05:51:13 $
 Summary:	MySQL Name Service Switch Module
 Summary(pl):	Modu³ NSS MySQL
 Name:		nss_mysql

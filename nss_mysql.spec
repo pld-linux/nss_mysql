@@ -1,4 +1,4 @@
-# $Revision: 1.7 $Date: 2002-11-19 14:31:48 $
+# $Revision: 1.8 $Date: 2002-11-21 18:45:46 $
 Summary:	MySQL Name Service Switch Module
 Summary(pl):	Modu³ NSS MySQL
 Name:		nss_mysql
@@ -11,6 +11,7 @@ Patch0:		%{name}-m4.patch
 URL:		http://www.freesoftware.fsf.org/nss-mysql/
 BuildRequires:	autoconf
 BuildRequires:	automake
+BuildRequires:	libtool
 BuildRequires:	mysql-devel
 BuildRequires:	zlib-devel
 BuildRoot:	%{tmpdir}/%{name}-%{version}-root-%(id -u -n)
@@ -32,6 +33,7 @@ MySQL.
 
 %build
 rm -f missing
+%{__libtoolize}
 %{__aclocal}
 %{__autoconf}
 %{__automake}

@@ -40,8 +40,8 @@ MySQL.
 	%{?debug:--enable-debug} \
 	--enable-group \
 	--enable-shadow \
-	--with-mysql=%{_prefix} \
-	--with-mysql-lib=%{_libdir}
+	--with-mysql-lib=%{_libdir} \
+	--with-mysql-include=/usr/include/mysql
 
 %install
 rm -rf $RPM_BUILD_ROOT

@@ -7,7 +7,7 @@ diff -urN nss-mysql-0.43.org/acinclude.m4 nss-mysql-0.43/acinclude.m4
  
 -if test ! -f "${MYSQL_LIB}/libmysqlclient.a"; then
 -	if test -f "${MYSQL_HOME}/lib/libmysqlclient.a"; then
-+if test ! -f "${MYSQL_LIB}/libmysqlclient.a"  -o -f  "${MYSQL_LIB}/libmysqlclient.so"; then
++if test ! -f "${MYSQL_LIB}/libmysqlclient.a"  -a ! -f  "${MYSQL_LIB}/libmysqlclient.so"; then
 +	if test -f "${MYSQL_HOME}/lib/libmysqlclient.a" -o -f  "${MYSQL_HOME}/lib/libmysqlclient.so"; then
  		MYSQL_LIB=${MYSQL_HOME}/lib
  	else

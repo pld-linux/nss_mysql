@@ -1,4 +1,4 @@
-# $Revision: 1.1 $Date: 2002-03-26 23:00:44 $
+# $Revision: 1.2 $Date: 2002-05-21 23:14:15 $
 Summary:	MySQL Name Service Switch Module
 Summary(pl):	Modu³ NSS MySQL
 Name:		nss_mysql
@@ -33,7 +33,7 @@ MySQL.
 %build
 rm -f missing
 aclocal
-autoconf
+%{__autoconf}
 automake -a -c
 %configure \
 	%{?debug:--enable-debug} \

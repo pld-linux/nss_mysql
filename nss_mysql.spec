@@ -1,4 +1,4 @@
-# $Revision: 1.8.2.2 $Date: 2003-09-10 14:29:45 $
+# $Revision: 1.8.2.3 $Date: 2003-09-10 15:23:36 $
 Summary:	MySQL Name Service Switch Module
 Summary(pl):	Modu³ NSS MySQL
 Name:		nss_mysql
@@ -29,7 +29,7 @@ informacji typowych dla plików groups, passwd oraz shadow w bazie
 MySQL.
 
 %prep
-%setup -q
+%setup -q -n nss-mysql-%{version}
 %patch0 -p1
 
 %build

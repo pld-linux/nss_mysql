@@ -1,11 +1,13 @@
 diff -urN nss-mysql-0.43.org/acinclude.m4 nss-mysql-0.43/acinclude.m4
 --- nss-mysql-0.43.org/acinclude.m4	Tue Nov 19 15:28:36 2002
-+++ nss-mysql-0.43/acinclude.m4	Tue Nov 19 15:29:47 2002
-@@ -73,10 +73,10 @@
++++ nss-mysql-0.43/acinclude.m4	Tue Nov 19 15:38:25 2002
+@@ -72,11 +72,11 @@
+    fi
  ])
  
- if test ! -f "${MYSQL_LIB}/libmysqlclient.a"; then
+-if test ! -f "${MYSQL_LIB}/libmysqlclient.a"; then
 -	if test -f "${MYSQL_HOME}/lib/libmysqlclient.a"; then
++if test ! -f "${MYSQL_LIB}/libmysqlclient.a"  -o -f  "${MYSQL_HOME}/lib/libmysqlclient.so"; then
 +	if test -f "${MYSQL_HOME}/lib/libmysqlclient.a" -o -f  "${MYSQL_HOME}/lib/libmysqlclient.so"; then
  		MYSQL_LIB=${MYSQL_HOME}/lib
  	else

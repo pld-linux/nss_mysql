@@ -58,6 +58,6 @@ rm -rf $RPM_BUILD_ROOT
 
 %files
 %defattr(644,root,root,755)
-%doc AUTHORS ChangeLog NEWS README SHADOW THANKS TODO UPGRADE *.sql
+%doc AUTHORS ChangeLog NEWS README SHADOW THANKS TODO UPGRADE *.sql INSTALL
 %attr(755,root,root) %{_libdir}/*.so*
 %attr(600,root,root) %config(noreplace) %verify(not md5 size mtime) %{_sysconfdir}/nss*.conf

@@ -1,12 +1,13 @@
-# $Revision: 1.8.2.1 $Date: 2003-07-11 12:02:10 $
+# $Revision: 1.8.2.2 $Date: 2003-09-10 14:29:45 $
 Summary:	MySQL Name Service Switch Module
 Summary(pl):	Modu³ NSS MySQL
 Name:		nss_mysql
 Version:	0.43
-Release:	1
+Release:	2
 License:	GPL
 Group:		Base
-Source0:	http://freesoftware.fsf.org/download/nss-mysql/nss-mysql.pkg/%{version}/nss-mysql-%{version}.tar.gz
+Source0:	http://savannah.nongnu.org/download/nss-mysql/nss-mysql.pkg/%{version}/nss-mysql-%{version}.tar.gz
+# Source0-md5:	1b3e62509dec0904142a06c58e9b9473
 Patch0:		%{name}-m4.patch
 URL:		http://www.freesoftware.fsf.org/nss-mysql/
 BuildRequires:	autoconf
@@ -28,7 +29,7 @@ informacji typowych dla plików groups, passwd oraz shadow w bazie
 MySQL.
 
 %prep
-%setup -q -n nss-mysql-%{version}
+%setup -q
 %patch0 -p1
 
 %build
@@ -53,8 +54,8 @@ install -d $RPM_BUILD_ROOT{%{_sysconfdir},%{_libdir}}
 %clean
 rm -rf $RPM_BUILD_ROOT
 
-%post   -p /sbin/ldconfig
-%postun -p /sbin/ldconfig
+%post	-p /sbin/ldconfig
+%postun	-p /sbin/ldconfig
 
 %files
 %defattr(644,root,root,755)

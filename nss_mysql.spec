@@ -2,7 +2,7 @@ Summary:	MySQL Name Service Switch Module
 Summary(pl):	Modu³ NSS MySQL
 Name:		nss_mysql
 Version:	0.43
-Release:	3
+Release:	4
 License:	GPL
 Group:		Base
 Source0:	http://savannah.nongnu.org/download/nss-mysql/nss-mysql.pkg/%{version}/nss-mysql-%{version}.tar.gz
@@ -16,7 +16,7 @@ BuildRequires:	mysql-devel
 BuildRequires:	zlib-devel
 BuildRoot:	%{tmpdir}/%{name}-%{version}-root-%(id -u -n)
 
-%define		_libdir		/lib
+%define		_libdir		/%{_lib}
 
 %description
 NSS MySQL is a NSS library for MySQL. It features full groups, passwd
@@ -32,7 +32,6 @@ MySQL.
 %patch0 -p1
 
 %build
-rm -f missing
 %{__libtoolize}
 %{__aclocal}
 %{__autoconf}
@@ -41,7 +40,8 @@ rm -f missing
 	%{?debug:--enable-debug} \
 	--enable-group \
 	--enable-shadow \
-	--with-mysql=%{_prefix}
+	--with-mysql=%{_prefix} \
+	--with-mysql-lib=%{_libdir}
 
 %install
 rm -rf $RPM_BUILD_ROOT

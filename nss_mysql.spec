@@ -2,7 +2,7 @@ Summary:	MySQL Name Service Switch Module
 Summary(pl):	Modu³ NSS MySQL
 Name:		nss_mysql
 Version:	0.43
-Release:	5
+Release:	6
 License:	GPL
 Group:		Base
 Source0:	http://savannah.nongnu.org/download/nss-mysql/nss-mysql.pkg/%{version}/nss-mysql-%{version}.tar.gz
